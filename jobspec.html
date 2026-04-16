@@ -1,0 +1,256 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Website</title>
+
+<style>
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffce0;
+  color: #004225;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+nav button {
+  padding: 10px 16px;
+  cursor: pointer;
+  background-color: #8af0bf;
+  color: #004225;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background-color: #006633;
+  color: #ffffff;
+}
+
+.content-section {
+  padding: 60px 80px;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: flex-start;
+}
+
+.text-box {
+  flex: 1;
+  max-width: 700px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+ul {
+  font-size: 20px;
+}
+
+/* BOX STYLE */
+
+.box {
+  border: 2px solid #004225;
+  background-color: #f4ffd9;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* Job list spacing */
+
+.job-list li {
+  margin-bottom: 18px;
+}
+
+/* Requirements layout */
+
+.requirements {
+  margin-top: 60px;
+}
+
+.requirements ul {
+  columns: 2;
+  column-gap: 60px;
+}
+
+.requirements li {
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .text-box {
+    max-width: 100%;
+  }
+
+  .content-section {
+    padding: 40px;
+  }
+
+  .requirements ul {
+    columns: 1;
+  }
+}
+
+footer {
+  background-color: #004225;
+  color: #fffce0;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 16px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Hot beans web developement</h1>
+<p>Explore available web development roles at our company</p>
+
+<nav>
+<a href="index.html"><button>Home</button></a> | 
+<a href="jobspec.html"><button>Job Specification</button></a> | 
+<a href="developers.html"><button>Current Web Developers</button></a> | 
+<a href="course.html"><button>Web Development Courses</button></a> | 
+<a href="apply.html"><button>Apply Now</button></a>
+</nav>
+
+</header>
+
+<div class="content-section">
+
+<div class="row">
+
+<div class="text-box job-list">
+
+<div class="box">
+
+<h2>Available Job Positions</h2>
+
+<ul>
+<li>Front-End Developer</li>
+<li>Back-End Developer</li>
+<li>Full Stack Developer</li>
+<li>UI/UX Designer</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="text-box">
+
+<h2>Job Descriptions</h2>
+
+<h3>Front-End Developer</h3>
+<p>
+Front-End Developers create the visual parts of websites that users interact with.
+They use HTML, CSS, and JavaScript to build responsive layouts and ensure websites
+look professional and function smoothly across different devices and browsers.
+</p>
+
+<h3>Back-End Developer</h3>
+<p>
+Back-End Developers focus on the server-side functionality of websites.
+They manage databases, develop APIs, and ensure that websites process data
+securely and efficiently behind the scenes.
+</p>
+
+<h3>Full Stack Developer</h3>
+<p>
+Full Stack Developers work on both the front-end and back-end of web applications.
+They develop complete systems by connecting user interfaces with server logic
+and databases to create fully functional digital products.
+</p>
+
+<h3>UI/UX Designer</h3>
+<p>
+UI/UX Designers focus on improving how users experience websites.
+They design layouts, prototypes, and visual elements that make websites intuitive,
+visually appealing, and easy to navigate.
+</p>
+
+</div>
+
+</div>
+
+<div class="requirements">
+
+<div class="box">
+
+<h2>Job Requirements</h2>
+
+<ul>
+<li>Strong knowledge of HTML, CSS, and JavaScript</li>
+<li>Understanding of responsive web design principles</li>
+<li>Experience with frameworks such as React, Angular, or Vue</li>
+<li>Basic knowledge of back-end languages such as Python, PHP, or Node.js</li>
+<li>Understanding of databases such as MySQL or MongoDB</li>
+<li>Experience using Git or other version control tools</li>
+<li>Strong communication and teamwork skills</li>
+<li>Problem solving and debugging abilities</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Web Development Hiring Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

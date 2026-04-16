@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Website</title>
+
+<style>
+/* Make body full height and use flex to push footer down */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffce0; /* Background colour */
+  color: #004225; /* Text colour */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+/* Navigation buttons */
+nav button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #8af0bf; /* Button background colour */
+  color: #004225; /* Button text colour */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background-color: #006633; /* Darker green on hover */
+  color: #ffffff;
+}
+
+/* About section layout */
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex: 1; /* Ensures footer stays at bottom */
+}
+
+/* Text */
+.about-text {
+  max-width: 600px;
+}
+
+/* Image grid (2x2) */
+.image-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.image-group img {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width : 766px ){
+  .about-section {
+    flex-direction: column;
+  }
+
+  .image-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer styles */
+footer {
+  background-color: #004225; /* Dark green footer */
+  color: #fffce0; /* Light text */
+  text-align: center;
+  padding: 1px 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Hot Beans Web development</h1>
+
+  <nav>
+    <a href="index.html"><button>Home</button></a> | 
+    <a href="jobspec.html"><button>Job Specification</button></a> | 
+    <a href="developers.html"><button>Current Web Developers</button></a> | 
+    <a href="course.html"><button>Web Development Courses</button></a> | 
+    <a href="apply.html"><button>Apply Now</button></a>
+  </nav>
+</header>
+
+<div class="about-section">
+  
+  <div class="about-text">
+    <h2>About the Company</h2>
+    <p>
+Welcome to Hot Beans, where creativity meets code! We’re a passionate web development company dedicated to crafting dynamic,
+		user-friendly, and visually stunning websites that help businesses thrive online.
+    </p>
+    <p>
+At Hot Beans, we believe every brand has a story, and your website should tell it beautifully.
+		From sleek landing pages to complex web applications,
+		we combine the latest technologies with innovative design to deliver solutions that not only look great but perform flawlessly.
+    </p>
+
+    <h3>Why join us?</h3> 
+    <p>
+At Hot Beans, we turn ideas into dynamic, high-performing websites and applications that help businesses shine online.
+		We’re passionate about creating digital experiences that are not only beautiful and functional but also tailored to our clients’ goals.
+    </p>	
+    <p>
+Join us, and be part of a team and community where your ideas matter, your skills grow, and your work makes an impact.
+    </p>		  
+  </div>
+
+  <div class="image-group">
+    <img src="office.jpg" alt="Office 1">
+    <img src="office2.jpg" alt="Office 2">
+    <img src="building.jpg" alt="Office 3">
+    <img src="meeting.jpg" alt="Office 4">
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Web Development Hiring Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

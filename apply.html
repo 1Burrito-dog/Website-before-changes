@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Apply Now - Hot Beans Web Development</title>
+
+<style>
+/* Page layout */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffce0;
+  color: #004225;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+nav button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #8af0bf;
+  color: #004225;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background-color: #006633;
+  color: white;
+}
+
+/* Main application container */
+.application-section {
+  flex: 1;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.application-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 2px solid #004225;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error Message Styling */
+#error-display {
+  background-color: #ffdad6;
+  color: #ba1a1a;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 5px solid #ba1a1a;
+  margin-bottom: 20px;
+  display: none; /* Hidden by default */
+}
+
+/* File upload */
+input[type="file"] {
+  border: none;
+  padding-left: 0;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 200px;
+  padding: 12px;
+  background-color: #8af0bf;
+  color: #004225;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #006633;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #004225;
+  color: #fffce0;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Hot Beans Web Development</h1>
+  <nav>
+    <a href="index.html"><button type="button">Home</button></a> |
+    <a href="jobspec.html"><button type="button">Job Specification</button></a> |
+    <a href="developers.html"><button type="button">Current Web Developers</button></a> |
+    <a href="course.html"><button type="button">Web Development Courses</button></a> |
+    <a href="apply.html"><button type="button">Apply Now</button></a>
+  </nav>
+</header>
+
+<div class="application-section">
+  <h2>Application Form</h2>
+
+  <div id="error-display"></div>
+
+  <form id="applyForm">
+    <label for="position">Job Position Applying For</label>
+    <select id="position" name="position">
+      <option value="">-- Select a Position --</option>
+      <option value="Front End Developer">Front End Developer</option>
+      <option value="Back End Developer">Back End Developer</option>
+      <option value="Full Stack Developer">Full Stack Developer</option>
+      <option value="Junior Web Developer">Junior Web Developer</option>
+    </select>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name">
+
+    <label for="contact">Contact Details (Address / Phone)</label>
+    <input type="text" id="contact" name="contact" placeholder="Enter address or phone number">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email">
+
+    <label for="message">Message / Why should we hire you?</label>
+    <textarea id="message" name="message" placeholder="Please add a message telling us about yourself..."></textarea>
+
+    <label for="cv">Upload CV</label>
+    <input type="file" id="cv" name="cv">
+
+    <button class="submit-btn" type="submit">Submit Application</button>
+  </form>
+</div>
+
+<footer>
+  <p>© 2026 Web Development Hiring Website. All rights reserved.</p>
+</footer>
+
+<script>
+  const applyForm = document.getElementById('applyForm');
+  const errorDisplay = document.getElementById('error-display');
+
+  applyForm.addEventListener('submit', function(event) {
+    // 1. Prevent the page from refreshing
+    event.preventDefault();
+
+    // 2. Clear previous errors
+    errorDisplay.style.display = 'none';
+    errorDisplay.innerHTML = '';
+
+    // 3. Get field values
+    const position = document.getElementById('position').value;
+    const name = document.getElementById('name').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const cv = document.getElementById('cv').value;
+
+    let errors = [];
+
+    // 4. Validation Checks
+    if (!position) errors.push("Please select a job position.");
+    if (!name) errors.push("Full Name is required.");
+    if (!contact) errors.push("Contact details are required.");
+    if (!email) errors.push("A valid email address is required.");
+    if (!message) errors.push("Please add a message or cover letter to your application.");
+    if (!cv) errors.push("Please upload your CV.");
+
+    // 5. If there are errors, show them
+    if (errors.length > 0) {
+      errorDisplay.innerHTML = "<strong>Missing Information:</strong><br>• " + errors.join("<br>• ");
+      errorDisplay.style.display = 'block';
+      window.scrollTo(0, 0); // Scroll to top to see error
+      return;
+    }
+
+    // 6. "Save" the data (Simulated using LocalStorage)
+    const applicationData = {
+      position,
+      name,
+      contact,
+      email,
+      message,
+      submittedAt: new Date().toLocaleString()
+    };
+
+    // Store in LocalStorage (converts object to string)
+    localStorage.setItem('lastApplication', JSON.stringify(applicationData));
+
+    // 7. Success Message
+    alert("Success! Thank you, " + name + ". Your application for the " + position + " position has been saved.");
+    
+    // Optional: Reset the form after success
+    applyForm.reset();
+  });
+</script>
+
+</body>
+</html>
